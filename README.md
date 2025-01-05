@@ -1,12 +1,13 @@
 # JavaScript Projects
 
-This repository is a collection of projects and exercises from my JavaScript course.  
+This repository is a collection of projects from my Javascript course.  
 It serves as a playground for learning and experimenting with JavaScript concepts.  
 
-⚠️ **Note**: This repo is used for learning purposes and is not intended for legitimate projects.
+⚠️ **Note**: This repo is used for learning purposes and is not intended for legitimate projects.  
+    **Note**: The designs of the projects are not created by me, I am only responsible for the Javascript functionality.
 
 ## Table of Contents  
 
-| Project       | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| **Note App**  | A to-do app that lets users create, delete, and color-code tasks, with input validation and an interactive UI. |
+| Project       | Description         | What I Learned|
+|---------------|---------------------|---------------|
+| **Note App**  | a simple to-do app. |DOM manipulation, event handling, input validation, and UI interaction in JavaScript.|
