@@ -1,10 +1,10 @@
 # JavaScript Projects
 
-This repository is a collection of projects from my Javascript course.  
+This repository is a collection of projects from my JavaScript course.  
 It serves as a playground for learning and experimenting with JavaScript concepts.  
 
 ⚠️ **Note**: This repo is used for learning purposes and is not intended for legitimate projects.  
-    **Note**: The designs of the projects are not created by me, I am only responsible for the Javascript functionality.
+    **Note**: The designs of the projects are not created by me, I am only responsible for the JavaScript functionality.
 
 ## Table of Contents  
 
