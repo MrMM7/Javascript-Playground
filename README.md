@@ -1,6 +1,6 @@
 # JavaScript Projects
 
-This repository is a collection of projects from my JavaScript course.  
+This repository contains a collection of projects I've completed as part of my JavaScript course, along with personal projects I've created to practice and showcase my skills.  
 It serves as a playground for learning and experimenting with JavaScript concepts.  
 
 ⚠️ **Note**: This repo is used for learning purposes and is not intended for legitimate projects.  
