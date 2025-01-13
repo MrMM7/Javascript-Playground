@@ -8,7 +8,7 @@ It serves as a playground for learning and experimenting with JavaScript concept
 
 ## Table of Contents  
 
-| Project          | Description          | What I Learned|
-|------------------|----------------------|---------------|
-| **Note App**     | a simple to-do app.  |DOM manipulation, event handling, input validation, and UI interaction in JavaScript.|
-| **Clicker Game** | a mini cookie clicker|I learned how to create a basic clicker game with JavaScript.
+| Projects          | Description          | What I Learned|
+|-------------------|----------------------|---------------|
+| **Note App**      | a simple to-do app.  |DOM manipulation, event handling, input validation, and UI interaction in JavaScript.|
+| **Clicker Game**  | a mini cookie clicker|I learned how to create a basic clicker game with JavaScript.
