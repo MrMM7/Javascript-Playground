@@ -78,6 +78,6 @@ button.upgrade-btn:hover {
   font-size: 1rem;
   color: #555;
 }
-.purchesed {
+.purchased {
   text-decoration: line-through 2px red;
 }
