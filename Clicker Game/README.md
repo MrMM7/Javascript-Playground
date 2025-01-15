@@ -1,5 +1,8 @@
 # Cookie Clicker
 
-a simple clicker game made by me :)
+a simple clicker game made by me :)<br>
+To Run the game open CMD and Type this
 
-to run the game open cmd and type "node node.js"
+``` Bash
+node node.js
+```
