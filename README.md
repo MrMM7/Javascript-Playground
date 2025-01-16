@@ -11,4 +11,5 @@ It serves as a playground for learning and experimenting with JavaScript concept
 | Projects          | Description          | What I Learned|
 |-------------------|----------------------|---------------|
 | **Note App**      | a simple to-do app.  |DOM manipulation, event handling, input validation, and UI interaction in JavaScript.|
-| **Clicker Game**  | a mini cookie clicker|I learned how to create a basic clicker game with JavaScript.
+| **Clicker Game**  | a mini cookie clicker|I learned how to create a basic clicker game with JavaScript.|
+| **Memory card game**| a card flipping game to challenge your memory|Learned to build a memory card game with JavaScript, using AI for code assistance.|
