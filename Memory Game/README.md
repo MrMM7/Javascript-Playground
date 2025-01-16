@@ -19,11 +19,24 @@ This is a simple **memory card game** where players match pairs of cards. Each c
 - **JavaScript**: For card logic, shuffling, and flip behavior.
 
 ## Installation
-To play the game locally, follow these steps:
+
+To run the game with Node.js:
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/MrMM7/Javascript-Playground/tree/main/Memory%20Game
+    git clone https://github.com/your-username/memory-card-game.git
     ```
-2. Open `index.html` in your browser.
 
+2. Navigate to the project directory:
+    ```bash
+    cd memory-card-game
+    ```
+
+3. Run the following command to start the game:
+    ```bash
+    node node.js
+    ```
+
+4. The game will automatically open once the command is typed
+
+   Have fun :)
