@@ -23,7 +23,7 @@ To play the game locally, follow these steps:
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/your-username/memory-card-game.git
+    git clone https://github.com/MrMM7/Javascript-Playground/tree/main/Memory%20Game
     ```
 2. Open `index.html` in your browser.
 
