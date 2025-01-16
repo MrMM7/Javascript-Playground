@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { exec } = require("child_process");
 
 const PORT = 3000;
 
@@ -55,4 +56,6 @@ const server = http.createServer((req, res) => {
 // Start the server
 server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
+  // Open Chrome
+  exec(`start chrome http://localhost:${PORT}`);
 });
