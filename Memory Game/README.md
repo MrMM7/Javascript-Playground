@@ -22,21 +22,20 @@ This is a simple **memory card game** where players match pairs of cards. Each c
 
 To run the game with Node.js:
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/your-username/memory-card-game.git
-    ```
+1. Download this project:
+   
+   idk how but you can figure it out
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
     ```bash
     cd memory-card-game
     ```
 
-3. Run the following command to start the game:
+4. Run the following command to start the game:
     ```bash
     node node.js
     ```
 
-4. The game will automatically open once the command is typed
+5. The game will automatically open in your browser once the command is typed
 
    Have fun :)
