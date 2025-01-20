@@ -1,74 +1,61 @@
-let $ = document;
+const addBtn = document.getElementById("add_btn");
+const modal = document.querySelector(".modal");
+const overlay = document.getElementById("overlay");
+const submitBtn = document.getElementById("todo_submit");
+const input = document.getElementById("todo_input");
+const todoContainer = [...document.querySelectorAll(".todo-container")];
+const noStatus = document.getElementById("no_status");
+const todoCloseBtn = document.querySelector(".btn");
 
-let clockTime = $.getElementById("timerDisplay");
-
-let startBtn = $.getElementById("startBtn");
-
-let pauseBtn = $.getElementById("pauseBtn");
-
-let inputBox = $.getElementById("inputTime");
-
-let resetBtn = $.getElementById("resetBtn");
-
-let minutes = 0;
-
-let seconds = 0;
-
-function startFunction() {
-  // Seconds to minute converter
-  if (inputBox.value.trim() != "") {
-    while (inputBox.value >= 60) {
-      inputBox.value -= 60;
-      minutes = minutes + 1;
-      seconds = inputBox.value;
-    }
-    seconds = inputBox.value;
-    inputBox.value = "";
-    // Countdown Clock
-    let interval = setInterval(function () {
-      if (seconds === 0 && minutes === 0) {
-        minutes = 0;
-        seconds = 0;
-        inputBox.value = "";
-        clearInterval(interval);
-      } else {
-        if (seconds == 0) {
-          minutes--;
-          seconds = 60;
-        } else if (seconds != 0) {
-          seconds--;
-        }
-
-        if (minutes < 10 && seconds < 10) {
-          clockTime.innerHTML = "0" + minutes + " : 0" + seconds;
-        } else if (minutes < 10) {
-          clockTime.innerHTML = "0" + minutes + " : " + seconds;
-        } else if (seconds < 10) {
-          clockTime.innerHTML = minutes + " : 0" + seconds;
-        }
-      }
-    }, 1000);
-    pauseBtn.addEventListener("click", function () {
-      clearInterval(interval);
+function todoHandler() {
+  if (input.value.trim() != "") {
+    let newTodoElement = document.createElement("div");
+    newTodoElement.className = "todo";
+    newTodoElement.draggable = "true";
+    newTodoElement.innerHTML = input.value;
+    newTodoElement.id = newTodoElement.innerHTML;
+    let newSpanElement = document.createElement("span");
+    newSpanElement.className = "close";
+    newSpanElement.innerHTML = "&times;";
+    newSpanElement.addEventListener("click", function (e) {
+      e.target.parentElement.remove();
     });
-    resetBtn.addEventListener("click", function () {
-      clearInterval(interval);
-      inputBox.value = "";
-      minutes = 0;
-      seconds = 0;
-      clockTime.innerHTML = "00 : 00";
+    newTodoElement.append(newSpanElement);
+    newTodoElement.addEventListener("dragstart", function (e) {
+      e.dataTransfer.setData("todo", newTodoElement.id);
     });
+    noStatus.append(newTodoElement);
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+    input.value = "";
   }
-  clearInterval();
-  return;
 }
 
-startBtn.addEventListener("click", startFunction);
+addBtn.addEventListener("click", function () {
+  modal.classList.add("active");
+  overlay.classList.add("active");
+  window.addEventListener("keydown", function (e) {
+    input.focus();
+    if (e.key === "Enter") {
+      todoHandler();
+    }
+  });
+});
+submitBtn.addEventListener("click", todoHandler);
 
-// Auto Focus
-window.addEventListener("keydown", function (e) {
-  if (!isNaN(e.key)) inputBox.focus();
-  if (e.key === "Enter") {
-    startFunction();
-  }
+todoContainer.forEach(function (item) {
+  item.addEventListener("dragover", function (e) {
+    e.preventDefault();
+  });
+  item.addEventListener("drop", function (e) {
+    let targetId = e.dataTransfer.getData("todo");
+    let target = document.getElementById(targetId);
+    e.target.append(target);
+  });
+});
+
+todoCloseBtn.addEventListener("click", function () {
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+  input.value = "";
 });
