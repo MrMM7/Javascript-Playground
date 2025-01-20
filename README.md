@@ -16,3 +16,4 @@ It serves as a playground for learning and experimenting with JavaScript concept
 | **Memory Card Game** ⭐    | A card flipping game to challenge your memory. | Learned to build a memory card game with JavaScript, using AI for code assistance. |
 | **Rock, Paper, Scissors** ⭐| A simple Rock, Paper, Scissors game against the computer. | I learned how to handle button clicks and implement basic game logic in JavaScript. |
 |**Countdown Timer** ⭐| A countdown timer that updates dynamically.| Handling time, setInterval, and DOM updates.|
+|**Draggable TodoList**| A draggable to-do list with add, move, and delete features.| I learned drag-and-drop, modal handling, and DOM manipulation.|
