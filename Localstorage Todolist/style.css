@@ -1,0 +1,110 @@
+body {
+  background-color: #f3f3f3;
+}
+
+#todoList label {
+  width: 80%;
+}
+#todoList li {
+  list-style-type: none;
+}
+.completed {
+  text-decoration: line-through 2px;
+  color: #afa7a7;
+}
+label {
+  color: black;
+}
+#todoList .btn {
+  margin-left: 10px;
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: lightslategray; /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures preloader is on top */
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light gray background */
+  border-top: 8px solid #3498db; /* Blue color for spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Spinning animation */
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade-out effect for the spinner */
+.spinner.fade-out {
+  opacity: 0;
+  animation: none; /* Stop spinner animation */
+  transition: opacity 1s ease-out; /* Smooth fade-out transition */
+}
+
+/* Content Styles (initially hidden) */
+.content {
+  display: none;
+}
+
+/* Show content once spinner fades out */
+.spinner.fade-out + .content {
+  display: block;
+}
+.preloader.fade-out-background {
+  opacity: 0;
+  pointer-events: none; /* Disable interactions with the preloader once it's hidden */
+  transition: opacity 1s ease-out; /* Smooth transition for the background */
+}
+
+/* Content Styles (initially hidden) */
+.content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in; /* Smooth fade-in transition for content */
+}
+
+/* Show content once spinner fades out */
+.content.fade-in {
+  display: block;
+  opacity: 1;
+}
+#theme {
+  background-color: lightslategrey;
+  border: none;
+  margin-top: 5px;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  border-radius: 5px;
+}
+.darkBody {
+  background-color: dimgray;
+  color: white;
+}
+.darkLabel {
+  color: white;
+}
+.darkInput {
+  background-color: #afa7a7;
+  color: white;
+}
+.darkTodo {
+  background-color: #afa7a7;
+  border: #afa7a7;
+}
