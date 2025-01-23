@@ -18,3 +18,4 @@ It serves as a playground for learning and experimenting with JavaScript concept
 |**Countdown Timer** ⭐| A countdown timer that updates dynamically.| Handling time, setInterval, and DOM updates.|
 |**Draggable TodoList**| A draggable to-do list with add, move, and delete features.| I learned drag-and-drop, modal handling, and DOM manipulation.|
 |**Localstorage Todolist**| To-do list with themes & a premium preloader.| DOM manipulation, event handling, local storage, and _fake_ loading screens.|
+|**Booklist**| An app to add and store books in `localStorage`.| I learned DOM manipulation, localStorage, and validation.|
