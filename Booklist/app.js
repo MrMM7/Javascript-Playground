@@ -5,6 +5,7 @@ const addBtn = document.getElementById("addBtn");
 const bookList = document.getElementById("book-list");
 let dataBase = JSON.parse(localStorage.getItem("books")) || [];
 
+// Adding previously added books back into the list
 window.addEventListener("load", function () {
   dataBase.forEach(function (book) {
     let newTrElement = document.createElement("tr");
@@ -19,14 +20,17 @@ window.addEventListener("load", function () {
   });
 });
 
+// Add books
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  // Validation process
   if (
     titleInput.value.trim() != "" &&
     authorInput.value.trim() != "" &&
-    yearInput.value.trim() != ""
+    yearInput.value.trim() != "" &&
+    !isNaN(yearInput.value)
   ) {
-    if (!isNaN(yearInput.value)) {
+    // Creating the book Element
       let newTrElement = document.createElement("tr");
       let newTitleElement = document.createElement("th");
       newTitleElement.innerHTML = titleInput.value;
@@ -34,6 +38,7 @@ addBtn.addEventListener("click", function (e) {
       newAuthorElement.innerHTML = authorInput.value;
       let newYearElement = document.createElement("th");
       newYearElement.innerHTML = yearInput.value;
+    // Adding the book to the dataBase Array
       dataBase.push({
         Title: titleInput.value,
         Author: authorInput.value,
@@ -43,6 +48,7 @@ addBtn.addEventListener("click", function (e) {
       authorInput.value = "";
       yearInput.value = "";
       newTrElement.append(newTitleElement, newAuthorElement, newYearElement);
+    // Adding Database to localstorage using JSON.stringify
       localStorage.setItem("books", JSON.stringify(dataBase));
       bookList.append(newTrElement);
     } else {
@@ -52,6 +58,7 @@ addBtn.addEventListener("click", function (e) {
     alert("Please fill the informations correctly.");
   }
 });
+// Delete All Shortcut
 window.addEventListener("keydown", function (e) {
   if (e.ctrlKey === true && e.key === "b") {
     localStorage.clear();
