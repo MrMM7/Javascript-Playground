@@ -20,3 +20,4 @@ It serves as a playground for learning and experimenting with JavaScript concept
 |**Localstorage Todolist**| To-do list with themes & a premium preloader.| DOM manipulation, event handling, local storage, and _fake_ loading screens.|
 |**Booklist**| An app to add and store books in `localStorage`.| I learned DOM manipulation, localStorage, and validation.|
 |**Dynamic Pagination**| A dynamic pagination system to display a list of people with page navigation.| I learned how to implement pagination and update content dynamically with JavaScript.|
+|**Shopping cart**| a bad dynamic store with an even worse shopping cart| nothing, just ai garbage|
