@@ -27,7 +27,7 @@ To add a new product to the store:
    - **`name`** → The actual product name
    - **`price`** → Product price as a number with no $ sign
    - **`desc`** → A brief description of the product (e.g., "A high-quality product")
-   - 
+     
 3. **Save & Reload** – Your new product will now automatically be available in the shopping project!
 
 Feel free to contribute or modify the project! 🚀
