@@ -15,9 +15,11 @@ It serves as a playground for learning and experimenting with JavaScript concept
 | **Clicker Game** ⭐        | A mini game inspired by Cookie Clicker.        | I learned how to create a basic clicker game with JavaScript.                 |
 | **Memory Card Game** ⭐    | A card flipping game to challenge your memory. | Learned to build a memory card game with JavaScript, using AI for code assistance. |
 | **Rock, Paper, Scissors** ⭐| A simple Rock, Paper, Scissors game against the computer. | I learned how to handle button clicks and implement basic game logic in JavaScript. |
-|**Countdown Timer** ⭐| A countdown timer that updates dynamically.| Handling time, setInterval, and DOM updates.|
-|**Draggable TodoList**| A draggable to-do list with add, move, and delete features.| I learned drag-and-drop, modal handling, and DOM manipulation.|
-|**Localstorage Todolist**| To-do list with themes & a premium preloader.| DOM manipulation, event handling, local storage, and _fake_ loading screens.|
-|**Booklist**| An app to add and store books in `localStorage`.| I learned DOM manipulation, localStorage, and validation.|
-|**Dynamic Pagination**| A dynamic pagination system to display a list of people with page navigation.| I learned how to implement pagination and update content dynamically with JavaScript.|
-|**Shopping cart**| A dynamic store with a Shopping cart| not much, just Math and patience|
+| **Countdown Timer** ⭐| A countdown timer that updates dynamically.| Handling time, setInterval, and DOM updates.|
+| **Draggable TodoList**| A draggable to-do list with add, move, and delete features.| I learned drag-and-drop, modal handling, and DOM manipulation.|
+| **Localstorage Todolist**| To-do list with themes & a premium preloader.| DOM manipulation, event handling, local storage, and _fake_ loading screens.|
+| **Booklist**| An app to add and store books in `localStorage`.| I learned DOM manipulation, localStorage, and validation.|
+| **Dynamic Pagination**| A dynamic pagination system to display a list of people with page navigation.| I learned how to implement pagination and update content dynamically with JavaScript.|
+| **Shopping cart**| A dynamic store with a Shopping cart| not much, just Math and patience|
+| **Dynamic Store** | A dynamically generated store page with a dynamically generated product page | URLSearchParams, DOM Manipulation |
+
