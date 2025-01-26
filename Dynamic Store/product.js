@@ -31,6 +31,11 @@ let productFinder = allProduct.find(function (item) {
   return item.id == userID;
 });
 
+// if product is undefined then go back
+if (!productFinder) {
+  history.back();
+}
+
 const h1Element = document.querySelector("h1");
 h1Element.innerHTML = productFinder.name;
 
