@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Text Editor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+      }
+      .dark {
+        background: #121212;
+        color: #fff;
+        transition: 0.5s ease;
+      }
+      .light {
+        background-color: #fff6;
+        color: black;
+        transition: 0.5s ease;
+      }
+      .editor-container {
+        width: 80%;
+        max-width: 800px;
+        background: gainsboro;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        color: black;
+        transition: 0.5s ease;
+      }
+      .editor-container-dark {
+        width: 80%;
+        max-width: 800px;
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: 0.5s ease;
+      }
+      textarea {
+        width: 100%;
+        height: 400px;
+        background: transparent;
+        border: none;
+        outline: none;
+        resize: none;
+        font-size: 16px;
+        font-family: monospace;
+      }
+      .toggle-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: darkgray;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+      .toggle-button:hover {
+        background: gray;
+      }
+      .toggle-button-dark {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #1e1e1e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+      .toggle-button-dark:hover {
+        background: rgb(102, 102, 102);
+      }
+      .autosave {
+        background-color: lightgreen;
+        color: white;
+        position: absolute;
+        text-align: center;
+        padding: 30px 50px 30px 50px;
+        top: 20px;
+        left: 20px;
+        border-radius: 5px;
+        transition: 0.5s ease;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="hidden">Autosave</div>
+    <div class="editor-container">
+      <button class="toggle-button">Dark mode</button>
+      <textarea id="editor" placeholder="Start typing..."></textarea>
+      <p>0 characters</p>
+    </div>
+    <script>
+      const inputBox = document.getElementById("editor");
+      const numberCounterElement = document.querySelector("p");
+      const darkBtn = document.querySelector(".toggle-button");
+      const container = document.querySelector(".editor-container");
+      const autosaveDiv = document.querySelectorAll("div")[0];
+      let themeFlag = JSON.parse(localStorage.getItem("theme"));
+      darkMode();
+
+      window.addEventListener("load", function () {
+        if (localStorage.getItem("main-Data") != null) {
+          inputBox.value = localStorage.getItem("main-Data");
+          numberCounterElement.innerHTML = localStorage.getItem("characters");
+          darkMode();
+        }
+      });
+      inputBox.addEventListener("input", (e) => {
+        numberCounterElement.innerHTML = `${inputBox.value.length} characters.`;
+      });
+      function darkMode() {
+        if (themeFlag == false) {
+          document.body.classList.add("dark");
+          document.body.classList.remove("light");
+          container.className = "editor-container-dark";
+          inputBox.style.color = "white";
+          darkBtn.innerHTML = "Light mode";
+          darkBtn.className = "toggle-button-dark";
+          themeFlag = true;
+        } else {
+          document.body.classList.remove("dark");
+          document.body.classList.add("light");
+          container.className = "editor-container";
+          inputBox.style.color = "black";
+          darkBtn.innerHTML = "Dark mode";
+          darkBtn.className = "toggle-button";
+          themeFlag = false;
+        }
+      }
+      function saveFunction() {
+        localStorage.setItem("main-Data", inputBox.value);
+        localStorage.setItem("characters", numberCounterElement.innerHTML);
+        localStorage.setItem("theme", JSON.stringify(themeFlag));
+      }
+      setInterval(function () {
+        saveFunction();
+        autosaveDiv.className = "autosave";
+        setTimeout(function () {
+          autosaveDiv.className = "hidden";
+        }, 3500);
+      }, 30000);
+
+      darkBtn.addEventListener("click", darkMode);
+      window.addEventListener("beforeunload", saveFunction);
+      window.addEventListener("keydown", function (e) {
+        if (e.ctrlKey === true && e.key === "s") {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
