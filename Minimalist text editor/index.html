@@ -160,6 +160,7 @@
       setInterval(function () {
         saveFunction();
         autosaveDiv.className = "autosave";
+        autosaveDiv.innerHTML = "َAutosave";
         setTimeout(function () {
           autosaveDiv.className = "hidden";
         }, 3500);
@@ -170,6 +171,12 @@
       window.addEventListener("keydown", function (e) {
         if (e.ctrlKey === true && e.key === "s") {
           e.preventDefault();
+          saveFunction();
+          autosaveDiv.className = "autosave";
+          autosaveDiv.innerHTML = "Saved";
+          setTimeout(function () {
+            autosaveDiv.className = "hidden";
+          }, 3500);
         }
       });
     </script>
