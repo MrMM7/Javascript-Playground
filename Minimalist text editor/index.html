@@ -129,7 +129,9 @@
         }
       });
       inputBox.addEventListener("input", (e) => {
-        numberCounterElement.innerHTML = `${inputBox.value.length} characters.`;
+        numberCounterElement.innerHTML = `${
+          inputBox.value.replace(/\s+/g, "").length
+        } characters.`;
       });
       function darkMode() {
         if (themeFlag == false) {
