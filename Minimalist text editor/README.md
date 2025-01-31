@@ -22,6 +22,7 @@ Welcome to the **Minimalist Text Editor** – the easiest way to type, write, or
 2. **Switch Themes**: Tap the dark mode/light mode button and impress your friends with your preference for either late-night or early-morning vibes.
 3. **Track Characters**: Whether you’re aiming for brevity or wordiness, we’ve got your character count covered.
 4. **Auto-Save**: We save your work so you don't have to. It’s like magic, but with more coding.
+5. **Manual Save**: if autosave wasn't good enough you can use ctrl + s to easily save without having any worries
 
 ## Contributing 🙌
 
