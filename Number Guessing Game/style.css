@@ -1,0 +1,115 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-right: 270px;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Game Styling */
+.game {
+  margin: 20px 0;
+}
+
+#guess {
+  padding: 10px;
+  width: 60%;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+#submitGuess {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#submitGuess:hover {
+  background-color: #45a049;
+}
+
+/* Feedback Message */
+.feedback {
+  margin-top: 20px;
+}
+
+#feedbackMessage {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* High/Low Signs Styling */
+#high,
+#low {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#high {
+  color: green;
+}
+
+#low {
+  color: red;
+}
+
+#resetbtn {
+  margin-top: 4vh;
+  padding: 5px 15px 5px 15px;
+  background-color: red;
+  color: white;
+  border: 1px solid darkred;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#resetbtn:hover {
+  background-color: rgb(200, 0, 0);
+}
+
+#clock {
+  text-align: center;
+  padding-top: 95px;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  margin-right: 50px;
+  border-radius: 100%;
+}
+.hidden {
+  visibility: hidden;
+}
