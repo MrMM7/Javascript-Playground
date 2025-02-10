@@ -22,4 +22,5 @@ It serves as a playground for learning and experimenting with JavaScript concept
 | **Dynamic Pagination**| A dynamic pagination system to display a list of people with page navigation.| I learned how to implement pagination and update content dynamically with JavaScript.|
 | **Shopping cart**| A dynamic store with a Shopping cart| not much, just Math and patience|
 | **Dynamic Store** | A dynamically generated store page with a dynamically generated product page | URLSearchParams, DOM Manipulation |
-| **Minimalist text editor** ⭐| A functional, stable and sleek note app with zero actual functionality outside of writing text | Patience|
+| **Minimalist text editor** ⭐| A functional, stable and sleek note app with zero actual functionality outside of writing text | Patience |
+| **Number Guessing Game** ⭐| A simple yet frustrating game of guess the number with hints and a timer| Random Odds and DOM Manipulation |
