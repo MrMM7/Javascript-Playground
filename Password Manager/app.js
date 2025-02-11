@@ -83,7 +83,6 @@ function saveAllFunction() {
   });
   allPass.forEach((item) => {
     passArray.push(item.dataset.password);
-    item.dataset = "";
   });
   localStorage.setItem("webArr", JSON.stringify(webArray));
   localStorage.setItem("usersArr", JSON.stringify(usersArray));
