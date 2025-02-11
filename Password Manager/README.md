@@ -9,6 +9,7 @@ Welcome to the **Password Manager** – the only password manager that doesn’t
 - **Password Deletion**: Delete those old, forgotten passwords with ease. We believe in clean digital spaces. 🧹
 - **Encryption**: Okay, maybe we didn’t encrypt everything in this demo, but trust us, you’ll be able to *encrypt like a pro* if you need it. 🤐
 - **Dark Mode**: Because who doesn’t love browsing at night? 🌙
+- **Random Password Generator**: Generate strong, random passwords using the **Ctrl + Q** shortcut. No more weak passwords like *"password123"*. 🎯
 
 ### 🔒 Why is it so Secure?
 You’re probably asking, *"Why is this the most secure password manager out there?"*  
@@ -25,9 +26,9 @@ Well, it’s simple: **No database, no server-side storage**. It’s all in your
 3. Hit **Save**, and voilà! Your password is now secured in your very own local storage vault.
 4. Need to find a password? Just use the **Search Bar**. It’s like Google, but for your passwords.
 5. Want to delete old passwords? Simply hit **Delete**. It’s therapeutic.
+6. **Generate a random password**: Press **Ctrl + Q** to instantly generate a secure, random password.
 
 ### 🤖 Future Features (maybe):
-- **Randomly Generated Passwords**: Because strong passwords are the key to security, we plan to add a feature that generates strong, random passwords at the click of a button. No more weak passwords like *"password123"*.
 - **More Security Options**: We're always thinking of ways to make this even more secure, including improvements to encryption and storage.
 
 ### 💥 How to Run This:
