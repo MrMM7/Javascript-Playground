@@ -10,6 +10,8 @@ const saveBtn = document.getElementById("savebtn");
 
 const closeBtn = document.querySelector(".close");
 
+let randomPasswordLength = 128; // this is the number of letters that the randomly generated passwords length will be 
+
 let elementArray;
 
 function popupMenuShower() {
@@ -148,6 +150,107 @@ function searchEngine() {
   passwordListElement.innerHTML = elementArray.join("");
 }
 
+function generatePassword() {
+  let allLetters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "!",
+    "@",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "-",
+    "_",
+    "=",
+    "+",
+    "[",
+    "]",
+    "{",
+    "}",
+    ";",
+    ":",
+    ",",
+    ".",
+    "<",
+    ">",
+    "/",
+    "?",
+    "|",
+    "\\",
+  ];
+  let password = "";
+  for (let index = 0; index < randomPasswordLength; index++) {
+    let randomNum = Math.floor(Math.random() * allLetters.length);
+    password += allLetters[randomNum];
+  }
+  passwordInput.value = password;
+}
+
 addPassword.addEventListener("click", popupMenuShower);
 saveBtn.addEventListener("click", validator);
 closeBtn.addEventListener("click", closePopup);
@@ -186,3 +289,8 @@ passwordInput.addEventListener("keydown", (e) => {
 window.addEventListener("unload", saveAllFunction);
 window.addEventListener("load", loadPreviousPasswords);
 searchInput.addEventListener("input", searchEngine);
+passwordInput.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey === true && e.key === "q") || e.key === "Q") {
+    generatePassword();
+  }
+});
