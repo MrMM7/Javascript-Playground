@@ -10,7 +10,7 @@ const saveBtn = document.getElementById("savebtn");
 
 const closeBtn = document.querySelector(".close");
 
-let randomPasswordLength = 128; // this is the number of letters that the randomly generated passwords length will be 
+let randomPasswordLength = 128;
 
 let elementArray;
 
@@ -71,7 +71,6 @@ function saveAllFunction() {
   let webArray = [];
   let usersArray = [];
   let passArray = [];
-  let completeObj = [];
   let allWebsites = document.querySelectorAll(".website");
   let allUsers = document.querySelectorAll(".user");
   let allPass = document.querySelectorAll(".pass");
@@ -84,6 +83,7 @@ function saveAllFunction() {
   });
   allPass.forEach((item) => {
     passArray.push(item.dataset.password);
+    item.dataset = "";
   });
   localStorage.setItem("webArr", JSON.stringify(webArray));
   localStorage.setItem("usersArr", JSON.stringify(usersArray));
@@ -259,6 +259,11 @@ websiteInput.addEventListener("keydown", (e) => {
   if (e.key === "ArrowDown") {
     usernameInput.focus();
   }
+
+  if (e.key === "ArrowUp") {
+    passwordInput.focus();
+  }
+
   if (e.key === "Enter") {
     validator();
   }
@@ -279,6 +284,9 @@ usernameInput.addEventListener("keydown", (e) => {
 passwordInput.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") {
     usernameInput.focus();
+  }
+  if (e.key === "ArrowDown") {
+    websiteInput.focus();
   }
 
   if (e.key === "Enter") {
