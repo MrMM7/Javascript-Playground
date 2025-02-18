@@ -142,9 +142,9 @@
     <div class="editor-container">
       <button class="toggle-button">Dark mode</button>
       <textarea id="editor" placeholder="Start typing..."></textarea>
-      <p>0 characters</p>
       <!-- Added IntelliSense suggestion box element -->
       <ul id="intellisense" class="intellisense-box"></ul>
+      <p>0 characters. 0 Words</p>
     </div>
     <script>
       const inputBox = document.querySelector("textarea");
@@ -163,10 +163,13 @@
         }
       });
       inputBox.addEventListener("input", (e) => {
+        let wordCount = inputBox.value.trim().split(/\s+/).length;
+
         numberCounterElement.innerHTML = `${
           inputBox.value.replace(/\s+/g, "").length
-        } characters.`;
+        } characters. ${wordCount} Words.`;
       });
+
       function darkMode() {
         if (themeFlag == false) {
           document.body.classList.add("dark");
@@ -224,14 +227,12 @@
         ":angry": "😡",
         ":liar": "🤥",
         ":cool": "😎",
-        ":smile": "😄",
         ":hacker": "👨‍💻",
         ":belaad": "👌",
         ":like": "👍",
         ":hi": "👋",
         ":peace": "✌️",
         ":heart": "❤️",
-        ":fire": "🔥",
       };
       let selectedIndex = 0;
       let currentSuggestions = [];
