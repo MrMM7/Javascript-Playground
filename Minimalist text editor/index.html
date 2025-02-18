@@ -164,7 +164,9 @@
       });
       inputBox.addEventListener("input", (e) => {
         let wordCount = inputBox.value.trim().split(/\s+/).length;
-
+        if (inputBox.value.trim() == "") {
+          wordCount = 0;
+        }
         numberCounterElement.innerHTML = `${
           inputBox.value.replace(/\s+/g, "").length
         } characters. ${wordCount} Words.`;
