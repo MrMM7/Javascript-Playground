@@ -104,6 +104,37 @@
       .hidden {
         visibility: hidden;
       }
+
+      /* Added VS Code–style IntelliSense styles */
+      .intellisense-box {
+        position: absolute;
+        background: #252526;
+        color: #ccc;
+        border: 1px solid #3c3c3c;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1000;
+        max-height: 200px;
+        overflow-y: hidden;
+        font-family: monospace;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .intellisense-box li {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .intellisense-box li.selected {
+        background: #094771;
+        color: white;
+      }
+      .intellisense-box li:hover {
+        background: #094771;
+        color: white;
+      }
     </style>
   </head>
   <body class="">
@@ -112,9 +143,11 @@
       <button class="toggle-button">Dark mode</button>
       <textarea id="editor" placeholder="Start typing..."></textarea>
       <p>0 characters</p>
+      <!-- Added IntelliSense suggestion box element -->
+      <ul id="intellisense" class="intellisense-box"></ul>
     </div>
     <script>
-      const inputBox = document.getElementById("editor");
+      const inputBox = document.querySelector("textarea");
       const numberCounterElement = document.querySelector("p");
       const darkBtn = document.querySelector(".toggle-button");
       const container = document.querySelector(".editor-container");
@@ -178,6 +211,109 @@
           setTimeout(function () {
             autosaveDiv.className = "hidden";
           }, 3500);
+        }
+      });
+
+      /* Added VS Code–style IntelliSense functionality */
+      const intellisenseBox = document.getElementById("intellisense");
+      const emojiMap = {
+        ":laugh": "😄",
+        ":cryinglaugh": "😂",
+        ":cry": "😭",
+        ":hmm": "🤨",
+        ":angry": "😡",
+        ":liar": "🤥",
+        ":cool": "😎",
+        ":hacker": "👨‍💻",
+        ":belaad": "👌",
+        ":like": "👍",
+        ":hi": "👋",
+        ":peace": "✌️",
+        ":heart": "❤️",
+      };
+      let selectedIndex = 0;
+      let currentSuggestions = [];
+
+      function renderIntelliSense() {
+        let listHTML = currentSuggestions
+          .map((item, index) => {
+            return `<li class="${
+              index === selectedIndex ? "selected" : ""
+            }">${item} ${emojiMap[item]}</li>`;
+          })
+          .join("");
+        intellisenseBox.innerHTML = listHTML;
+        intellisenseBox.style.display = "block";
+        // Position the box near the textarea (fixed position below the first line)
+        const rect = inputBox.getBoundingClientRect();
+        intellisenseBox.style.top = rect.top + 30 + "px";
+        intellisenseBox.style.left = rect.left + 10 + "px";
+        // Scroll the selected element into view if necessary
+        const selectedItem = intellisenseBox.querySelector("li.selected");
+        if (selectedItem) {
+          selectedItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+        }
+      }
+
+      function hideIntelliSense() {
+        intellisenseBox.style.display = "none";
+      }
+
+      inputBox.addEventListener("keyup", function (e) {
+        // Ignore arrow keys and Enter so we don't reset the suggestion state
+        if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) return;
+        const cursorPos = inputBox.selectionStart;
+        const textBeforeCursor = inputBox.value.substring(0, cursorPos);
+        const match = textBeforeCursor.match(/(:\w*)$/);
+        if (match) {
+          let query = match[1];
+          currentSuggestions = Object.keys(emojiMap).filter((key) =>
+            key.startsWith(query)
+          );
+          if (currentSuggestions.length > 0) {
+            selectedIndex = 0;
+            renderIntelliSense();
+          } else {
+            hideIntelliSense();
+          }
+        } else {
+          hideIntelliSense();
+        }
+      });
+
+      inputBox.addEventListener("keydown", function (e) {
+        const cursorPos = inputBox.selectionStart;
+        const textBeforeCursor = inputBox.value.substring(0, cursorPos);
+        const match = textBeforeCursor.match(/(:\w*)$/);
+        if (intellisenseBox.style.display === "block" && match) {
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            selectedIndex = (selectedIndex + 1) % currentSuggestions.length;
+            renderIntelliSense();
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            selectedIndex =
+              (selectedIndex - 1 + currentSuggestions.length) %
+              currentSuggestions.length;
+            renderIntelliSense();
+          } else if (e.key === "Enter") {
+            if (currentSuggestions.length > 0) {
+              e.preventDefault();
+              let selectedEmoji = emojiMap[currentSuggestions[selectedIndex]];
+              // Replace the matched query with the selected emoji
+              inputBox.value = inputBox.value.replace(/(:\w*)$/, selectedEmoji);
+              hideIntelliSense();
+            }
+          }
+        }
+      });
+
+      intellisenseBox.addEventListener("click", function (e) {
+        if (e.target.tagName.toLowerCase() === "li") {
+          const clickedText = e.target.innerText.split(" ")[0];
+          const selectedEmoji = emojiMap[clickedText];
+          inputBox.value = inputBox.value.replace(/(:\w*)$/, selectedEmoji);
+          hideIntelliSense();
         }
       });
     </script>
