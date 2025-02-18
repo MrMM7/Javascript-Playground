@@ -35,5 +35,5 @@ Feel free to add features, make it shinier, or just improve it however you want!
 
 ## License 📝
 
-This project is open-source and licensed under the [MIT License](LICENSE). Use it however you want, and may your creativity flow like an endless stream of words.
+This project is open-source and licensed under the MIT License. Use it however you want, and may your creativity flow like an endless stream of words.
 
