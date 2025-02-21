@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+}
+
+video {
+  width: 50%;
+  border-radius: 10px;
+  text-align: center;
+  background: black;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #cc0000;
+}
+#movie-image {
+  margin-top: 100px;
+  display: flex;
+  justify-self: center;
+}
+
+a {
+  text-align: left;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: hidden; /* Vertical scroll */
+  max-height: 80vh; /* Limit height */
+  padding: 0; /* Remove padding */
+}
+
+.movie-row {
+  display: flex;
+  justify-content: space-between; /* Space between the movies */
+  gap: 20px;
+  flex-wrap: wrap; /* Allow horizontal wrapping */
+  margin: 0; /* Remove margin */
+  padding: 10px;
+}
+
+.movie-item {
+  width: 270px; /* 4 items per row with space between */
+  height: 270px;
+  background-color: #222;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-item:hover {
+  transform: scale(1.01);
+}
+img {
+  width: 270px;
+  border-radius: 10px 10px 0 0;
+}
+
+.movie-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.movie-desc {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 5px;
+}
