@@ -25,3 +25,4 @@ It serves as a playground for learning and experimenting with JavaScript concept
 | **Minimalist text editor** ⭐| A functional, stable and sleek note app with zero actual functionality outside of writing text | Patience |
 | **Number Guessing Game** ⭐| A simple yet frustrating game of guess the number with hints and a timer| Random Odds and DOM Manipulation |
 | **Password Manager** ⭐| A modern and simple password manager with a search engine. because it has no database it is UNBREACHABLE 10/10 security| better ways of utilizing ai, DOM Manipulation|
+| **Metflix: Movie Library** | A cool movie library that allows you to watch movies online. just add your videos and update the database.js | nothing, by now I have literally learnt every useful aspect of js|
