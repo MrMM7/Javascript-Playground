@@ -1,4 +1,5 @@
-# JavaScript Projects
+## NOTE: I have long since finished learning Javascript and honestly this repo is a pretty awesome time capsule for me so I've archived it. have fun look at these terrible projects.
+### JavaScript Projects
 
 This repository contains a collection of projects I've completed as part of my JavaScript course, as well as personal projects I've created to practice and showcase my skills.  
 It serves as a playground for learning and experimenting with JavaScript concepts.
